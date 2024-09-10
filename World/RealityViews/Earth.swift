@@ -29,6 +29,12 @@ struct Earth: View {
                 moonConfiguration: moonConfiguration)
             content.add(earthEntity)
 
+            let marsEntity = try! await Entity(named: "pahrump_print_1x")
+            content.add(marsEntity)
+            marsEntity.position = [0, -0.5, 0]
+            marsEntity.setParent(earthEntity)
+
+
             // Handle custom accessibility events.
             if let axCustomActionHandler {
                 _ = content.subscribe(
